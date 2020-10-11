@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("datasets/breast_cancer.csv")
 
 #%%
-X = df.iloc[:,:-1].values
+X = df.iloc[:,1:-1].values
 y = df.iloc[:,-1].values
 
 #%% Splitting the dataset into the Training set and Test set
