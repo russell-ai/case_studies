@@ -1,13 +1,13 @@
 """Data Preprocessing"""
 
 #%% Importing the libraries (numpy,pandas,matplotlib,...)
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import numpy as np
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
 #%% Importing the data
-# df = pd.read_csv("Data.csv")
+# df = pd.read_csv("datasets/Data.csv")
 #Old custom way - reading file
 # import csv
 # data = open("Data.csv","r")
