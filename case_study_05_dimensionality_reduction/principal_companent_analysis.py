@@ -10,10 +10,12 @@ import pandas as pd
 
 # Splitting the dataset into the Training set and Test set
 
+
 # Feature Scaling
 
 
 # Applying PCA
+
 
 # Training the Logistic Regression model on the Training set
 
