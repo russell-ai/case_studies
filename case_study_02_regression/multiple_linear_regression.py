@@ -28,3 +28,15 @@ regressor.fit(X_train, y_train)
 #%% Predicting the Test set results
 y_pred = regressor.predict(X_test)
 print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+#%% Making a single prediction (for example the profit of a startup with R&D Spend = 160000, Administration Spend = 130000, Marketing Spend = 300000 and State = 'California')
+print(regressor.predict([[1, 0, 0, 160000, 130000, 300000]]))
+
+#%% Getting the final linear regression equation with the values of the coefficients
+
+print(regressor.coef_)
+print(regressor.intercept_)
+
+#%% the equation of our multiple linear regression model is:
+
+# {Profit} = 86.6 *{Dummy State 1} - 873 *{Dummy State 2} + 786 *{Dummy State 3} - 0.773 *{R&D Spend} + 0.0329 *{Administration} + 0.0366 *{Marketing Spend} + 42467.53$$
+
