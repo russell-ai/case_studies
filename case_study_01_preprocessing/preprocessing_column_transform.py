@@ -31,4 +31,4 @@ ct = make_column_transformer(
     remainder="passthrough"
 )
 
-ct.fit_transform(X)
+X_train = ct.fit_transform(X)
