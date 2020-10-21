@@ -8,15 +8,14 @@ from sklearn.datasets import fetch_openml
 
 #%% Importing the data
 X,y = fetch_openml("titanic",version=1, as_frame=True, return_X_y=True)
-X.head(3)
-X.isnull().sum()
 
 #%% Column Tranformation - Select cat and Continuous Features
 
 cat_var = ['embarked', 'sex', 'pclass']
 cont_var = ['age', 'fare']
 
-X = X[cat_var + cont_var]
+X = X[cat_var + cont_var].sample(10)
+
 
 #%% Column Transformation with Sklearn
 from sklearn.preprocessing import OneHotEncoder
@@ -31,20 +30,5 @@ ct = make_column_transformer(
     (imp, cont_var),
     remainder="passthrough"
 )
-
-ct.fit_transform(X)
-
-#%%
-df = pd.read_csv('http://bit.ly/kaggletrain', nrows=9)
-cols = ['Fare', 'Embarked', 'Sex', 'Age']
-X = df[cols]
-
-ohe = OneHotEncoder()
-imp = SimpleImputer()
-
-ct = make_column_transformer(
-    (ohe, ['Embarked', 'Sex']),  # apply OneHotEncoder to Embarked and Sex
-    (imp, ['Age']),              # apply SimpleImputer to Age
-    remainder='passthrough')     # include remaining column (Fare) in the output
 
 ct.fit_transform(X)
