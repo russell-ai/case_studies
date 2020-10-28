@@ -9,8 +9,10 @@ import pandas as pd
 #%% Data Preprocessing
 df = pd.read_csv('datasets/Market_Basket_Optimisation.csv', header = None)
 transactions = []
-for i in range(0, 7501):
-  transactions.append([str(df.values[i,j]) for j in range(0, 20)])
+# for i in range(0, len(df)):  # df.shape[0] instead of len()
+#   transactions.append([str(df.values[i,j]) for j in range(0, 20)])  # df.shape[1] instead of 20
+for row in df.iterrows():
+    transactions.append(row)
 
 #%% Training the Apriori model on the dataset
 from apyori import apriori
