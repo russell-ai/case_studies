@@ -24,7 +24,7 @@ results
 def inspect(results):
     lhs         = [tuple(result[2][0][0])[0] for result in results]
     rhs         = [tuple(result[2][0][1])[0] for result in results]
-    supports    = [result[1] for result in results]
+    supports    = [result[1] for result in results]         # we removed confidence and lift that the apriori model has.
     return list(zip(lhs, rhs, supports))
 resultsinDataFrame = pd.DataFrame(inspect(results), columns = ['Product 1', 'Product 2', 'Support'])
 
