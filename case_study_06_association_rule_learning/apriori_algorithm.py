@@ -1,5 +1,4 @@
-"""Apriori"""
-#to install the apyori package: pip install apyori
+"""Apriori Algorithm ===== People who bought also bought...==== """
 
 #%% Importing the libraries
 import numpy as np
@@ -15,12 +14,11 @@ for row in df.iterrows():
     transactions.append(row)
 
 #%% Training the Apriori model on the dataset
-from apyori import apriori
+from apyori import apriori    # to install the apyori package: pip install apyori
 rules = apriori(transactions = transactions, min_support = 0.003, min_confidence = 0.2, min_lift = 3, min_length = 2, max_length = 2)
 
 #%% Visualising the results
-
-#%% Displaying the first results coming directly from the output of the apriori function
+#Displaying the first results coming directly from the output of the apriori function
 results = list(rules)
 results
 
