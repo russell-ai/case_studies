@@ -8,8 +8,8 @@ import pandas as pd
 #%% Data Preprocessing
 df = pd.read_csv('datasets/Market_Basket_Optimisation.csv', header = None)
 transactions = []
-for i in range(0, 7501):
-  transactions.append([str(df.values[i,j]) for j in range(0, 20)])
+for i in range(0, df.shape[0]):
+  transactions.append([str(df.values[i,j]) for j in range(0, df.shape[1])])
 
 #%% Training the Eclat model on the dataset
 from apyori import apriori
